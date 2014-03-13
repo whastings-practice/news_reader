@@ -1,12 +1,12 @@
-# Welcome to News Reader Demo
+# News Reader
 
-* bundle install
-* rake db:migrate
-* rake db:seed
+This is a Backbone.js and Rails-powered RSS reader
+built as a project for [App Academy](http://appacademy.io).
 
-Three feeds with their entries will be created upon running `rake
-db:seed`.
+**Features**
 
-Good luck. Have fun.
+- Each user has her own set of feeds.
+- User can favorite feeds.
+- Reading view displays full-HTML descriptions.
 
-
+Pair programming partner: Samantha Eng
