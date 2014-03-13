@@ -1,8 +1,11 @@
-<h1>Hello World</h1>
+<% content_for :head do %>
+  <%= javascript_include_tag "application" %>
+<% end %>
+
 <div id='content'>
 
 </div>
 
-<script>
-
+<script type="application/json" id="feeds-bootstrap">
+  <%= @feeds_json.html_safe %>
 </script>

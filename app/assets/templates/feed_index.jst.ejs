@@ -1,0 +1,26 @@
+<% if (favorites.length) { %>
+  <h2>Favorites</h2>
+  <ul class="list-group">
+    <% favorites.forEach(function(feed) { %>
+      <li class="list-group-item">
+        <a href="#/feeds/<%= feed.escape('id') %>" class="feed-link">
+          <%= feed.escape('title') %>
+        </a>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+
+<hr>
+
+<ul class="list-group">
+  <% nonFavorites.forEach(function(feed) { %>
+    <li class="list-group-item">
+      <a href="#/feeds/<%= feed.escape('id') %>" class="feed-link">
+        <%= feed.escape('title') %>
+      </a>
+    </li>
+  <% }); %>
+</ul>
+
+<a href="#/feeds/new" class="btn btn-success">Add Feed</a>

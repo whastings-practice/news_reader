@@ -1,6 +1,21 @@
+# == Schema Information
+#
+# Table name: feeds
+#
+#  id         :integer          not null, primary key
+#  url        :string(255)      not null
+#  title      :string(255)      not null
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+require 'open-uri'
+
 class Feed < ActiveRecord::Base
 
   has_many :entries, :dependent => :destroy
+  has_many :subscriptions,
+           :class_name => "FeedSubscription"
 
   def self.find_or_create_by_url(url)
     feed = Feed.find_by_url(url)

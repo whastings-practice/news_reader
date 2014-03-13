@@ -1,7 +1,14 @@
 class EntriesController < ApplicationController
   def index
     feed = Feed.find(params[:feed_id])
-    render :json => feed.entries
+    feed.reload
+    @entries = feed.entries
+    render 'entries/index'
+  end
+
+  def show
+    @entry = Entry.find(params[:id])
+    render 'entries/show'
   end
 
   private

@@ -1,0 +1,17 @@
+<h2>
+  <%= feed.escape('title') %>
+  <a class="glyphicon glyphicon-star<%= feed.get('favorite') ? '' : '-empty' %> favorite"></a>
+</h2>
+
+<button class="refresh-button btn btn-info">Refresh</button>
+
+<ul class="list-group">
+  <% feed.entries.each(function(entry) { %>
+    <li class="list-group-item">
+      <a href="<%= '#/entries/' + entry.escape('id') %>" >
+        <%= entry.escape('title') %>
+      </a> published at <%= entry.escape('published_at') %>
+      <p><%= entry.get('description') %></p>
+    </li>
+  <% }); %>
+</ul>
